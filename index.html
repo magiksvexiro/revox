@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Magiks Vexiro - Blog Pengembangan</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem;
+      background: #1a1a2e;
+      font-family: 'Poppins', sans-serif;
+      color: #ddd;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      color: #845ef7;
+      font-weight: 600;
+      font-size: 2.8rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    p.intro {
+      max-width: 600px;
+      text-align: center;
+      font-weight: 400;
+      color: #bbb;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeInUp 1.2s ease 0.5s forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2 {
+      color: #9f87ff;
+      font-weight: 600;
+      border-bottom: 2px solid #845ef7;
+      padding-bottom: 0.3rem;
+      margin: 3rem 0 1.5rem;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .artikel {
+      background: #222244;
+      border-radius: 12px;
+      padding: 1.8rem 2rem;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(132, 94, 247, 0.4);
+      transition: all 0.4s ease;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .artikel:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(132, 94, 247, 0.6);
+    }
+
+    h3 {
+      margin-top: 0;
+      color: #c0b8ff;
+      font-weight: 600;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.3rem;
+      color: #b0a7e8;
+      margin-bottom: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.8rem;
+      font-size: 1rem;
+    }
+
+    li strong {
+      color: #845ef7;
+    }
+
+    a.download-btn {
+      display: inline-block;
+      background: #845ef7;
+      color: white;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    a.download-btn:hover {
+      background: #a78bfa;
+      transform: translateY(-2px);
+    }
+
+    .sosmed {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .sosmed a {
+      color: #9f87ff;
+      font-size: 28px;
+      margin: 0 12px;
+      transition: color 0.3s ease, transform 0.2s ease;
+    }
+
+    .sosmed a:hover {
+      color: #c0b8ff;
+      transform: scale(1.2);
+    }
+
+    .footer {
+      margin-top: 3rem;
+      padding: 1.2rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+      border-top: 1px solid #333;
+      width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .artikel {
+        padding: 1.5rem 1.8rem;
+      }
+
+      a.download-btn {
+        padding: 10px 24px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>MAGIKS VEXIRO</h1>
+  <p class="intro">
+    Selamat datang di blog Vexiro Magiks. Temukan pembaruan terbaru seputar aplikasi dan modul kami yang dapat langsung Anda unduh.
+  </p>
+
+  <h2>Versi Terbaru</h2>
+  <section class="artikel">
+    <h3>Magiks Vexiro v3.5.0</h3>
+    <ul>
+      <li><strong>Uninstall All Features:</strong> Menghapus semua modul/fungsi dengan mudah.</li>
+      <li><strong>Modules Install Shell:</strong> Instalasi modul lewat skrip shell tanpa patch manual.</li>
+      <li><strong>Perbaikan UI Desain:</strong> Antarmuka lebih bersih dan konsisten.</li>
+      <li><strong>AI Detector V2:</strong> Deteksi & hapus kode yang memperlambat perangkat.</li>
+      <li><strong>Info Dev Tambahan:</strong> Info pengembang (misal Instagram) dalam UI/script.</li>
+    </ul>
+    <a class="download-btn" href="https://www.mediafire.com/file/nz1v2tu635227gv/Magiks_Vexiro-v3.5.0.zip/file" download>Unduh Aplikasi</a>
+  </section>
+
+  <h2>Vexiro Module</h2>
+  <section class="artikel">
+    <ul>
+      <li><strong>Lihat Module Terbaru:</strong> Cek dan telusuri modul terbaru yang tersedia dengan mudah.</li>
+    </ul>
+    <a class="download-btn" href="modul-terbaru.html">Lihat Module Terbaru</a>
+  </section>
+
+  <div class="sosmed" aria-label="Sosial Media Vexiro">
+    <a href="https://www.instagram.com/traa_shelbyy?igsh=MXhpaTM5NDFhMmhldw==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://whatsapp.com/channel/0029Vb9bzvs6rsQuhWlvu42G" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.youtube.com/@traaweak" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://t.me/traatweak" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+    <a href="mailto:magiksvexiro@gmail.com" target="_blank" aria-label="Gmail"><i class="fas fa-envelope"></i></a>
+  </div>
+
+  <footer class="footer">
+    <p>Copyright © 2025 <strong>traatweak</strong> All rights reserved</p>
+  </footer>
+</body>
+</html>
