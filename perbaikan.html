@@ -23,11 +23,22 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      animation: fadeIn 1.2s ease-out;
       text-align: center;
+      opacity: 0;
+      transform: scale(0.98);
+      filter: blur(6px);
+      animation: revealPage 1s ease-out forwards;
     }
 
-    @keyframes fadeIn {
+    @keyframes revealPage {
+      to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+      }
+    }
+
+    @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
@@ -38,6 +49,9 @@
       margin-bottom: 1rem;
       letter-spacing: 0.05em;
       font-weight: 600;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: 0.5s;
     }
 
     p {
@@ -45,6 +59,9 @@
       color: #8b949e;
       max-width: 600px;
       margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: 1s;
     }
 
     .back-btn {
@@ -56,6 +73,12 @@
       text-decoration: none;
       transition: all 0.3s ease;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: 1.5s;
+      outline: none;
+      border: none;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .back-btn:hover {
@@ -63,13 +86,23 @@
       transform: scale(1.05);
     }
 
+    .back-btn:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
     footer.footer {
-      position: absolute;
-      bottom: 1rem;
       text-align: center;
       color: #6e7681;
       font-size: 0.9rem;
+      padding: 2rem 1rem 1rem;
+      border-top: 1px solid #30363d;
+      margin-top: auto;
       width: 100%;
+      animation: fadeInUp 0.9s ease forwards;
+      animation-delay: 2s;
+      opacity: 0;
+      transform: translateY(20px);
     }
 
     @media (max-width: 600px) {
@@ -90,10 +123,8 @@
 </head>
 <body>
 
-  <h1>Oops! Blog Sedang Dalam Perbaikan</h1>
-  <p>Kami sedang melakukan pembaruan dan perbaikan pada blog ini Silakan kembali lagi nanti untuk melihat konten terbaru Terima kasih atas pengertiannya!</p>
-
+  <h1>Oops Blog Sedang Dalam Perbaikan‼️</h1>
+  <p>Kami sedang melakukan pembaruan dan perbaikan pada blog ini. Silakan kembali lagi nanti untuk melihat konten terbaru. Terima kasih atas pengertiannya!</p>
   <a class="back-btn" href="index.html">Kembali ke Beranda</a>
-
 </body>
 </html>
