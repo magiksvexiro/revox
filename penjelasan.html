@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Penjelasan - Magiks Vexiro</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #58a6ff;
+      --background-color: #0d1117;
+      --card-color: #161b22;
+      --text-color: #c9d1d9;
+      --border-color: #30363d;
+      --accent-color: #238636;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.88rem;
+      padding: 2rem 1rem 5rem; /* Akan disesuaikan padding bawah */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      animation: revealPage 1s ease-out forwards;
+      opacity: 0;
+      transform: scale(0.98);
+      filter: blur(6px);
+    }
+
+    @keyframes revealPage {
+      to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+      }
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .module-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 3rem;
+    }
+
+    .module-card {
+      background-color: var(--card-color);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.5rem;
+      animation: fadeInUp 0.8s ease-out forwards;
+      box-shadow: 0 6px 20px rgba(20, 20, 20, 0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .module-card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      text-align: center;
+    }
+
+    .update-date {
+      color: #8b949e;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .module-card p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+      font-size: 0.87rem;
+      color: #c9d1d9;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-size: 0.88rem;
+    }
+
+    .download-btn:hover {
+      background-color: #79c0ff;
+      transform: scale(1.05);
+    }
+
+    /* Penyesuaian untuk membuat navbar lebih besar */
+    .bottom-navbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--card-color);
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-around;
+      padding: 0.8rem 0; /* Menambah padding vertikal untuk tinggi keseluruhan navbar */
+      z-index: 999;
+    }
+
+    .nav-item {
+      color: var(--text-color);
+      text-align: center;
+      text-decoration: none;
+      font-size: 0.95rem; /* Menaikkan ukuran font teks */
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+      flex-grow: 1; /* Agar item mengisi ruang secara merata */
+      padding: 0.2rem 0; /* Sedikit padding tambahan di dalam setiap item */
+    }
+
+    .nav-item i {
+      display: block;
+      font-size: 1.6rem; /* Menaikkan ukuran ikon */
+      margin-bottom: 5px; /* Menambah jarak antara ikon dan teks */
+    }
+
+    .nav-item:hover,
+    .nav-item:focus {
+      color: var(--primary-color);
+    }
+
+    .nav-item.info-link i {
+      color: var(--primary-color);
+    }
+
+    /* Mengubah padding-bottom pada body agar konten tidak tertutup navbar */
+    body {
+      padding-bottom: 95px; /* Menyesuaikan padding bawah body */
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      body {
+        padding: 1.5rem 0.8rem 85px; /* Menyesuaikan padding bawah body untuk layar kecil */
+        font-size: 0.85rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .module-card {
+        padding: 1.2rem;
+        border-radius: 14px;
+      }
+
+      .module-card h3 {
+        font-size: 1.1rem;
+      }
+
+      .module-card p {
+        font-size: 0.85rem;
+      }
+
+      .bottom-navbar {
+        padding: 0.7rem 0; /* Sedikit lebih besar untuk layar kecil, tapi tetap lebih besar dari sebelumnya */
+      }
+
+      .nav-item {
+        font-size: 0.85rem; /* Ukuran font untuk layar kecil */
+      }
+
+      .nav-item i {
+        font-size: 1.4rem; /* Ukuran ikon untuk layar kecil */
+        margin-bottom: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>PENJELASAN</h1>
+<br>
+  <div class="module-container">
+  <section class="module-card">
+    <h3>Apa Itu Magiks Vexiro❓</h3>
+    <br>
+    <p><strong>Magiks Vexiro</strong> adalah aplikasi yang dirancang untuk <strong>meningkatkan performa dan optimasi perangkat Android tanpa akses root</strong>. Dengan mengandalkan <strong>izin Shizuku</strong>, pengguna dapat mengelola sistem secara efisien tanpa risiko modifikasi sistem yang mendalam</p>
+    <p>Magiks Vexiro dikembangkan sebagai <strong>alternatif non-root dari Magisk</strong>, memungkinkan banyak fitur powerful digunakan secara lebih praktis Ini menjadikannya solusi ideal bagi pengguna yang ingin performa tinggi tanpa repot</p>
+    <p>Dengan antarmuka yang modern dan ringan, Magiks Vexiro memberikan pengalaman pengguna yang profesional, aman, dan bebas dari kerumitan teknis root</p>
+  </section>
+<br>
+<section class="module-card">
+  <h3>Persyaratan Aplikasi❓</h3>
+  <br>
+  <p>Untuk menjalankan Magiks Vexiro secara optimal pastikan perangkat kamu memenuhi persyaratan berikut:</p>
+  <ul style="padding-left: 1.2rem; list-style-type: disc; line-height: 1.8; margin-top: 0.5rem;">
+    <li><strong>Minimum Android Version:</strong> Android 11 (R)</li>
+    <li><strong>Target SDK Version:</strong> 28 (Android 9)</li>
+    <li><strong>Minimum SDK Version:</strong> 19 (Android 4.3)</li>
+    <li><strong>USB Debugging:</strong> Harus aktif</li>
+    <li><strong>Debugging Nirkabel:</strong> Harus aktif</li>
+    <li><strong>Izin akses penyimpanan penuh:</strong> Diperlukan</li>
+<li><strong>Dukungan Shizuku API:</strong> Wajib tersedia dan aktif</li>
+  </ul>
+  <p style="font-size: 0.95rem; color: #8b949e; margin-top: 0.5rem;">
+    Pastikan seluruh pengaturan di atas telah diaktifkan agar fitur-fitur Magiks Vexiro dapat berjalan tanpa hambatan
+  </p>
+</section>
+  </div>
+
+  <nav class="bottom-navbar">
+    <a href="index.html" class="nav-item"><i class="fas fa-home"></i><span>Beranda</span></a>
+    <a href="cara-install.html" class="nav-item"><i class="fas fa-download"></i><span>Install</span></a>
+    <a href="penjelasan.html" class="nav-item info-link"><i class="fas fa-info-circle"></i><span>Penjelasan</span></a>
+  </nav>
+</body>
+</html>
