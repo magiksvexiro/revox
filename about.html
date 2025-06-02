@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tentang - Magiks vexiro</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #58a6ff;
+      --background-color: #0d1117;
+      --card-color: #161b22;
+      --text-color: #c9d1d9;
+      --border-color: #30363d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      padding: 2rem 1rem 95px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      animation: revealPage 1s ease-out forwards;
+      opacity: 0;
+      transform: scale(0.98);
+      filter: blur(6px);
+    }
+
+    @keyframes revealPage {
+      to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+      }
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .module-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 3rem;
+    }
+
+    .module-card {
+      background-color: var(--card-color);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 1.8rem;
+      animation: fadeInUp 0.8s ease-out forwards;
+      box-shadow: 0 6px 20px rgba(20, 20, 20, 0.4);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .module-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      color: var(--primary-color);
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+
+    .module-card p {
+      margin-bottom: 1rem;
+      line-height: 1.7;
+      font-size: 0.9rem;
+      color: #d0d6dc;
+    }
+
+    .module-card strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .bottom-navbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--card-color);
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-around;
+      padding: 0.8rem 0;
+      z-index: 999;
+    }
+
+    .nav-item {
+      color: var(--text-color);
+      text-align: center;
+      text-decoration: none;
+      font-size: 0.95rem;
+      flex-grow: 1;
+      padding: 0.2rem 0;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .nav-item i {
+      display: block;
+      font-size: 1.6rem;
+      margin-bottom: 5px;
+    }
+
+    .nav-item:hover,
+    .nav-item:focus {
+      color: var(--primary-color);
+      outline: none;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .team-member {
+      text-align: center;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .team-member img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .team-member p {
+      font-size: 0.85rem;
+      color: var(--text-color);
+      line-height: 1.4;
+    }
+
+    .team-member span {
+      font-size: 0.72rem;
+      color: #8b949e;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 1.5rem 0.8rem 85px;
+        font-size: 0.85rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .module-card {
+        padding: 1.3rem;
+        border-radius: 16px;
+      }
+
+      .module-card h3 {
+        font-size: 1.15rem;
+      }
+
+      .module-card p {
+        font-size: 0.88rem;
+      }
+
+      .bottom-navbar {
+        padding: 0.7rem 0;
+      }
+
+      .nav-item {
+        font-size: 0.85rem;
+      }
+
+      .nav-item i {
+        font-size: 1.4rem;
+        margin-bottom: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Tentang Kami</h1>
+
+  <div class="module-container">
+<section class="module-card">
+  <h3>Tentang Magiks Vexiro</h3>
+  <p><strong>Magiks Vexiro</strong> adalah sebuah proyek inovatif yang didirikan pada <strong>21 Maret 2025</strong>. Proyek ini dikembangkan oleh kreator YouTube <strong>@traatweak</strong> sebagai bagian dari visinya untuk menyederhanakan pengalaman pengguna Android, khususnya dalam hal pengelolaan shell script tanpa perlu akses root</p>
+  <p>Nama “Magiks Vexiro” dipilih untuk mencerminkan kesan futuristik, praktis, dan efisien—memberikan solusi magis bagi pengguna Android dalam mengelola sistem mereka</p>
+  <p>Proyek ini dirancang untuk <strong>mempermudah pengguna non-root dalam menginstal dan menjalankan shell script</strong> tanpa harus repot memahami perintah instalasi atau penghapusan secara manual Cukup klik file <code>.sh</code> yang ingin dijalankan, maka sistem akan otomatis mengeksekusinya secara aman dan efisien.</p>
+  <p>Beberapa fitur unggulan Magiks Vexiro:</p>
+  <ul>
+    <li>Instalasi shell script otomatis hanya dengan satu klik</li>
+    <li>Menjalankan konfigurasi sistem tanpa akses root</li>
+    <li>Pengaturan sistem yang fleksibel dan praktis</li>
+    <li>Tidak memerlukan patch tambahan atau command rumit</li>
+    <li>Antarmuka ringan dan ramah untuk semua jenis perangkat</li>
+  </ul>
+  <br>
+  <p><strong>Magiks Vexiro</strong> bukan hanya sebuah aplikasi, tetapi sebuah kontribusi digital nyata dalam dunia pengembangan sistem Android. Dengan pendekatan yang mudah diakses oleh siapa pun, proyek ini hadir untuk membantu komunitas Android agar lebih bebas dan kreatif, tanpa batasan teknis yang menyulitkan</p>
+</section>
+
+<section class="module-card">
+  <h3>Tim Pengembang</h3>
+  <p>Proyek <strong>Magiks Vexiro</strong> tidak akan hadir tanpa kerja sama luar biasa dari tim pengembang yang berdedikasi. Setiap anggota memiliki peran penting dalam menyempurnakan fitur dan memastikan pengalaman pengguna berjalan lancar dan efisien</p>
+  <p><strong>Founder</strong>: @Putra – Penggagas utama visi dan arah pengembangan Magiks Vexiro.</p>
+  <p><strong>Sub-Founder & Open Source</strong>: @Cakra – Menangani kolaborasi dan kontribusi open source agar proyek tetap terbuka dan berkembang.</p>
+  <p><strong>Software Engineering</strong>: @Kaze – Bertanggung jawab dalam merancang logika sistem dan memastikan kestabilan aplikasi.</p>
+  <p><strong>Module Developer</strong>: @Mail – Mengembangkan modul-modul shell script yang menjadi inti dari fungsi aplikasi</p>
+
+  <p style="font-size: 0.95rem; color: #8b949e; margin-top: 0.5rem;">
+    Setiap anggota tim membawa keahlian uniknya untuk membangun aplikasi yang ringan, powerful, dan mudah digunakan. Kami percaya bahwa teknologi terbaik lahir dari kerja tim yang solid dan visi yang jelas
+  </p>
+
+  <div class="team-grid">
+    <div class="team-member">
+      <img src="Putra.jpg" alt="Putra">
+      <p>Putra<br><span>Founder</span></p>
+    </div>
+    <div class="team-member">
+      <img src="Cakra.jpg" alt="Cakra">
+      <p>Cakra<br><span>Sub-Founder & Open Source</span></p>
+    </div>
+    <div class="team-member">
+      <img src="kaze.jpg" alt="Kaze">
+      <p>Kaze<br><span>Software Engineering</span></p>
+    </div>
+    <div class="team-member">
+      <img src="mail.jpg" alt="Mail">
+      <p>Mail<br><span>Module Developer</span></p>
+    </div>
+  </div>
+</section>
+  </div>
+
+  <nav class="bottom-navbar">
+    <a href="index.html" class="nav-item">
+      <i class="fas fa-home"></i><span>Beranda</span>
+    </a>
+    <a href="cara-install.html" class="nav-item">
+      <i class="fas fa-download"></i><span>Install</span>
+    </a>
+    <a href="penjelasan.html" class="nav-item">
+      <i class="fas fa-info-circle"></i><span>Penjelasan</span>
+    </a>
+    <a href="about.html" class="nav-item">
+      <i class="fas fa-user-circle" style="color: var(--primary-color);"></i><span>About</span>
+    </a>
+  </nav>
+</body>
+</html>

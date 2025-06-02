@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cara Instalasi - Magiks Vexiro</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #58a6ff;
+      --background-color: #0d1117;
+      --card-color: #161b22;
+      --text-color: #c9d1d9;
+      --border-color: #30363d;
+      --code-bg-color: #0f161f;
+      --code-text-color: #7ee787;
+      --secondary-text-color: #8b949e;
+      --heading-text-color: #79c0ff;
+    }
+
+    /* Reset some default browser styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.88rem;
+      padding: 2rem 1rem 95px; /* Adjust padding for bottom navbar */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      animation: revealPage 1s ease-out forwards;
+      opacity: 0;
+      transform: scale(0.98);
+      filter: blur(6px);
+    }
+
+    @keyframes revealPage {
+      to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+      }
+    }
+
+    h1 {
+      font-size: 2rem; /* Reduced font size */
+      color: var(--primary-color);
+      margin-bottom: 1.5rem; /* Increased margin for better spacing */
+      text-align: center;
+    }
+
+    .module-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 3rem; /* Space before bottom navbar */
+    }
+
+    .module-card {
+      background-color: var(--card-color);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.5rem;
+      animation: fadeInUp 0.8s ease-out forwards;
+      box-shadow: 0 6px 20px rgba(20, 20, 20, 0.4);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .module-card h2 { /* Changed h3 to h2 for semantic hierarchy */
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      text-align: center;
+    }
+
+    .module-card h3 { /* Changed h4 to h3 for semantic hierarchy */
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--heading-text-color);
+    }
+
+    .module-card p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+      font-size: 0.87rem;
+      color: var(--text-color);
+    }
+
+    .module-card ol {
+      padding-left: 1.5rem; /* Increased padding for better readability */
+      line-height: 1.8;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .module-card ol li {
+      margin-bottom: 0.5rem; /* Add space between list items */
+    }
+
+    code {
+      display: inline-block;
+      background-color: var(--code-bg-color);
+      padding: 0.15rem 0.4rem;
+      border-radius: 0.3rem;
+      font-family: monospace;
+      font-size: 0.95rem;
+      color: var(--code-text-color);
+      word-break: break-all; /* Ensures long code strings wrap */
+    }
+
+    /* .last-updated has been removed */
+
+    .info-message {
+      font-weight: bold;
+      color: var(--primary-color);
+      margin-top: 1.5rem; /* Increased margin for better separation */
+      text-align: center; /* Centered the completion message */
+    }
+
+    .bottom-navbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--card-color);
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-around;
+      padding: 0.8rem 0;
+      z-index: 999;
+    }
+
+    .nav-item {
+      color: var(--text-color);
+      text-align: center;
+      text-decoration: none;
+      font-size: 0.95rem;
+      flex-grow: 1;
+      padding: 0.2rem 0;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+      display: flex; /* Use flexbox for vertical alignment */
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .nav-item i {
+      display: block;
+      font-size: 1.6rem;
+      margin-bottom: 5px;
+    }
+
+    .nav-item:hover,
+    .nav-item:focus {
+      color: var(--primary-color);
+      outline: none;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 1.5rem 0.8rem 85px; /* Adjust padding for bottom navbar */
+        font-size: 0.85rem;
+      }
+
+      h1 {
+        font-size: 1.8rem; /* Adjusted for smaller screens */
+      }
+
+      .module-card {
+        padding: 1.2rem;
+        border-radius: 14px;
+      }
+
+      .module-card h2 {
+        font-size: 1.1rem;
+      }
+
+      .module-card p {
+        font-size: 0.85rem;
+      }
+
+      .bottom-navbar {
+        padding: 0.7rem 0;
+      }
+
+      .nav-item {
+        font-size: 0.85rem;
+      }
+
+      .nav-item i {
+        font-size: 1.4rem;
+        margin-bottom: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>CARA INSTALASI VEXIRO‼️</h1>
+
+  <div class="module-container">
+    <section class="module-card">
+      <h2>Cara Menginstal Vexiro❓</h2>
+
+      <h3>Langkah Awal: Aktifkan USB Debugging dan Debug Nirkabel</h3>
+      <p>Sebelum memulai, pastikan Anda telah mengaktifkan <strong>USB Debugging</strong> dan <strong>Debugging Nirkabel</strong> pada perangkat Android. Langkah-langkahnya adalah sebagai berikut:</p>
+      <ol>
+        <li>Buka aplikasi <strong>Pengaturan (Settings)</strong> di perangkat Android Anda.</li>
+        <li>Gulir ke bawah dan pilih <strong>Tentang Ponsel (About Phone)</strong>.</li>
+        <li>Ketuk <strong>Nomor Bentukan (Build Number)</strong> sebanyak 7 kali hingga muncul notifikasi yang menyatakan bahwa <strong>mode pengembang telah aktif</strong>.</li>
+        <li>Kembali ke menu utama Pengaturan, lalu masuk ke <strong>Opsi Pengembang (Developer Options)</strong>.</li>
+        <li>Aktifkan opsi <strong>USB Debugging</strong>.</li>
+        <li>Aktifkan juga opsi <strong>Debugging Nirkabel</strong>.</li>
+        <li>Jika ada konfirmasi yang muncul, pilih <strong>Izinkan</strong> untuk melanjutkan.</li>
+      </ol>
+
+      <h3>Langkah Kedua: Konfigurasi Brevent dan Shizuku</h3>
+      <h4>1. Aktivasi Brevent</h4>
+      <p>Jika Anda belum familiar dengan proses aktivasi Brevent, silakan cari tutorial di YouTube dengan kata kunci seperti "cara menggunakan aplikasi Brevent". Pastikan status Brevent Anda sudah menunjukkan <strong>"Server started"</strong> sebelum melanjutkan.</p>
+
+      <h4>2. Aktivasi Shizuku Melalui Brevent</h4>
+      <p>Setelah Brevent aktif, ikuti langkah-langkah ini untuk mengaktifkan Shizuku:</p>
+      <ol>
+        <li>Buka aplikasi <strong>Shizuku</strong> di perangkat Anda.</li>
+        <li>Pilih metode aktivasi <strong>ADB non-root</strong>.</li>
+        <li>Anda akan melihat sebuah perintah ADB yang mirip dengan ini: <br>
+          <code>sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh</code>
+        </li>
+        <li><strong>Salin perintah tersebut.</strong></li>
+        <li>Buka kembali aplikasi <strong>Brevent</strong>, lalu tempel perintah yang sudah disalin tadi ke bagian input (jika Anda menggunakan Brevent ADB). Alternatifnya, Anda bisa menjalankannya melalui Termux jika aktivasi Brevent Anda dilakukan di sana.</li>
+      </ol>
+      <p>Setelah perintah berhasil dijalankan, status di aplikasi Shizuku akan berubah menjadi <strong>Aktif</strong> atau <strong>Running</strong>.</p>
+
+      <h4>3. Instalasi Aplikasi Magiks Vexiro</h4>
+      <ol>
+        <li>Jika Anda memiliki versi Magiks Vexiro yang lebih lama, <strong>hapus instalasi sebelumnya</strong> terlebih dahulu.</li>
+        <li>Unduh dan instal <strong>versi terbaru</strong> dari aplikasi Magiks Vexiro, yang sudah mendukung integrasi dengan Shizuku dan Brevent.</li>
+        <li>Setelah terinstal, berikan izin akses <strong>Shizuku</strong> ke aplikasi Vexiro saat diminta.</li>
+      </ol>
+
+      <p class="info-message">
+        Selamat! 🎉<br>
+        Sekarang Anda sudah siap untuk menjalankan Magiks Vexiro dengan sistem yang optimal, berkat integrasi yang sempurna dengan Brevent dan Shizuku.
+      </p>
+    </section>
+  </div>
+
+  <nav class="bottom-navbar">
+    <a href="index.html" class="nav-item">
+      <i class="fas fa-home"></i><span>Beranda</span>
+    </a>
+    <a href="cara-install.html" class="nav-item">
+      <i class="fas fa-download" style="color: var(--primary-color);"></i><span>Install</span>
+    </a>
+    <a href="penjelasan.html" class="nav-item">
+      <i class="fas fa-info-circle"></i><span>Penjelasan</span>
+    </a>
+    <a href="about.html" class="nav-item">
+      <i class="fas fa-user-circle"></i><span>About</span>
+    </a>
+  </nav>
+</body>
+</html>
