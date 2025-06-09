@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vexlynk</title>
+  <link rel="icon" href="icon.png" type="image/png" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .page-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem; /* Diperbesar */
+      font-weight: 700;
+      color: #58a6ff;
+      margin-bottom: 2rem;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      line-height: 1.2;
+      animation: fadeInText 1.2s ease;
+    }
+
+    .page-title img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .file-card {
+      background-color: #161b22;
+      border-radius: 20px;
+      padding: 2rem;
+      max-width: 420px; /* Diperkecil dari 520px */
+      width: 100%;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInText {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .file-name {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #58a6ff;
+      margin-bottom: 1rem;
+    }
+
+    .file-desc {
+      font-size: 1rem;
+      color: #c9d1d9;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+      text-align: left;
+      animation: fadeInText 1.2s ease;
+    }
+
+    .highlight-note {
+      color: #f1c40f;
+      font-weight: 600;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background-color: #238636;
+      color: #fff;
+      font-weight: 600;
+      padding: 12px 30px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .download-btn:hover {
+      background-color: #2ea043;
+    }
+
+    .footer {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #8b949e;
+      text-align: center;
+      animation: fadeInText 1.2s ease;
+    }
+
+    @media (max-width: 480px) {
+      .file-card {
+        padding: 1.5rem;
+      }
+
+      .file-name {
+        font-size: 1.5rem;
+      }
+
+      .file-desc {
+        font-size: 0.95rem;
+      }
+
+      .download-btn {
+        font-size: 0.95rem;
+        padding: 10px 24px;
+      }
+
+      .page-title {
+        font-size: 2rem; /* Diperbesar dari 1.5rem */
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .page-title img {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-title">
+    ⚡ Vexlynk
+  </div>
+
+  <div class="file-card">
+    <div class="file-name">THERMAL GAMING</div>
+    <div class="file-desc">
+      Klik tombol di bawah ini untuk mengunduh file <strong>THERMAL GAMING</strong><br><br>
+      <span class="highlight-note">⚠️ Catatan:</span><br>
+      Setelah menekan tombol, Anda akan diarahkan untuk menonton iklan selama <strong>5 detik</strong><br>
+      Anda boleh melewati iklan tersebut<br>
+      Jika iklan membuka aplikasi lain seperti toko online, cukup tekan tombol <strong>kembali (back)</strong> dan Anda akan langsung diarahkan ke link MediaFire untuk mengunduh file<br><br>
+      Jangan heran untuk iklan yang ditampilkan karena iklan tersebut bukan berasal dari Google<br>
+      Tapi saya jamin aman 100% dan semoga ini bisa membantu buat Anda yang tidak bisa melewati link Safelinku oke 😁
+    </div>
+    <button class="download-btn" id="downloadBtn">Download File</button>
+  </div>
+
+  <div class="footer">
+    © 2025 TraaTweak · Powered by <strong>Vexlynk</strong> · All rights reserved
+  </div>
+
+  <script>
+    const btn = document.getElementById('downloadBtn');
+
+    btn.addEventListener('click', () => {
+      btn.textContent = 'Loading...';
+      btn.disabled = true;
+
+      window.open('https://www.profitableratecpm.com/g3kf2djxxd?key=425afa2ae566891606b03b4e12d0a26f', '_blank');
+
+      setTimeout(() => {
+        btn.textContent = 'File Siap Diunduh';
+        window.location.href = 'https://www.mediafire.com/file/h52677lzts0fsfq/Thermal+Gaming.zip/file';
+      }, 5000);
+    });
+  </script>
+
+</body>
+</html>
