@@ -6,46 +6,43 @@
   <title>Module Terbaru - Magiks Vexiro</title>
   <link rel="icon" href="icon.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     :root {
-      --primary-color: #58a6ff; /* Biru cerah */
-      --background-color: #0d1117; /* Hampir hitam */
-      --card-color: #1a202c; /* Sedikit lebih terang dari background, lebih lembut dari #161b22 */
-      --text-color: #e2e8f0; /* Teks lebih cerah */
-      --secondary-text-color: #a0aec0; /* Teks sekunder, misalnya tanggal */
-      --border-color: #2d3748; /* Border yang lebih lembut */
-      --accent-color: #238636;
-      --header-bg: #1a202c; /* Sama dengan card-color untuk konsistensi */
-      --hover-effect-color: rgba(98, 172, 255, 0.15); /* Efek hover lebih transparan */
-      --button-hover-color: #4a90e2; /* Warna hover untuk tombol unduh */
+      --primary-color: #58a6ff;
+      --background-color: #0d1117;
+      --card-color: #1a202c;
+      --text-color: #e2e8f0;
+      --secondary-text-color: #a0aec0;
+      --border-color: #2d3748;
+      --button-hover-color: #4a90e2;
+      --hover-effect-color: rgba(88, 166, 255, 0.15);
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      /* Menghilangkan outline biru pada focus */
-      outline: none;
     }
 
     body {
       background-color: var(--background-color);
       color: var(--text-color);
-      font-family: 'Poppins', Arial, sans-serif;
-      padding: 0 1rem 3rem;
+      font-family: 'Poppins', sans-serif;
+      padding: 2rem 1rem 4rem;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 100vh;
-      animation: revealPage 1s ease-out forwards;
-      opacity: 0;
-      transform: scale(0.98);
-      filter: blur(6px);
-      font-size: 1rem; /* Ukuran font dasar sedikit lebih besar */
+      animation: fadeIn 0.8s ease forwards;
     }
 
-    @keyframes revealPage {
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.98);
+        filter: blur(4px);
+      }
       to {
         opacity: 1;
         transform: scale(1);
@@ -53,334 +50,172 @@
       }
     }
 
-    /* --- Gaya Header Dikembalikan ke Sebelumnya --- */
-    .app-header {
+    .search-container {
       width: 100%;
+      max-width: 600px;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .search-container input {
+      width: 100%;
+      padding: 10px 18px;
+      font-size: 0.95rem;
+      border-radius: 24px;
+      border: 1px solid var(--border-color);
       background-color: var(--card-color);
       color: var(--text-color);
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      /* Menambahkan spasi bawah lebih besar pada header */
-      margin-bottom: 3rem; /* Diperbesar dari 2rem menjadi 3rem */
-      border-bottom: 1px solid var(--border-color);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-      border-radius: 0;
-    }
-
-    .app-header .back-button {
-      background-color: transparent;
-      border: none;
-      color: var(--primary-color);
-      font-size: 1.5rem;
-      cursor: pointer;
-      padding: 0.5rem;
-      border-radius: 50%;
-      transition: background-color 0.2s ease, transform 0.2s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: none;
-    }
-
-    .app-header .back-button:hover {
-      background-color: var(--hover-effect-color);
-      transform: scale(1.1);
-      border-color: transparent;
-    }
-    
-    .app-header .back-button:focus,
-    .app-header .back-button:active {
       outline: none;
-      box-shadow: none;
-      background-color: var(--hover-effect-color);
-      transform: scale(1.0);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+      transition: 0.3s ease;
     }
 
-    h1.section-title {
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: var(--text-color);
-      text-align: center;
-      text-transform: none;
-      letter-spacing: normal;
-      margin: 0;
-      flex-grow: 1;
-      text-shadow: none;
+    .search-container input:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px var(--hover-effect-color);
     }
-    /* --- Akhir Gaya Header Dikembalikan --- */
-
 
     .module-grid-container {
       width: 100%;
-      max-width: 1500px;
+      max-width: 1000px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      padding: 0 1.5rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .module-grid-container {
+        grid-template-columns: 1fr;
+      }
     }
 
     .module-card {
       background-color: var(--card-color);
       border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 1.5rem;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-      text-align: left;
+      border-radius: 14px;
+      padding: 1rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
       display: flex;
       flex-direction: column;
-      animation: fadeInUp 0.8s ease-out forwards;
-      overflow: hidden;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .module-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
     }
 
     .module-card h3 {
-      font-size: 1.4rem;
+      font-size: 1.1rem;
       color: var(--primary-color);
-      font-weight: 600;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.4rem;
     }
 
     .update-date {
       color: var(--secondary-text-color);
-      font-size: 0.85rem;
-      margin-bottom: 1rem;
+      font-size: 0.8rem;
+      margin-bottom: 0.8rem;
     }
 
     .module-description {
-      display: block;
-      margin-top: 0.5rem;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: var(--text-color);
-      margin-bottom: 1.5rem;
-      overflow-wrap: break-word;
-      word-wrap: break-word;
-      hyphens: auto;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
     }
 
     .download-btn {
-      display: block;
-      width: 100%;
       margin-top: auto;
       background-color: var(--primary-color);
-      color: #fff;
-      padding: 12px 25px;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
       border-radius: 999px;
       font-weight: 600;
+      font-size: 0.95rem;
       text-decoration: none;
-      font-size: 1rem;
-      text-align: center;
-      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-      -webkit-tap-highlight-color: transparent;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     .download-btn:hover {
       background-color: var(--button-hover-color);
-      transform: scale(1.02);
-      box-shadow: 0 6px 15px rgba(88, 166, 255, 0.4);
-    }
-
-    button:focus,
-    a:focus {
-      outline: none;
-      box-shadow: none;
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(88, 166, 255, 0.3);
     }
 
     .footer {
       text-align: center;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: var(--secondary-text-color);
-      margin-top: auto;
-      padding: 3rem 1rem 1.5rem;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 1500px) {
-      .module-grid-container {
-        max-width: 1200px;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      }
-    }
-
-    @media (max-width: 1200px) {
-      .module-grid-container {
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 1.8rem;
-      }
-      h1.section-title {
-        font-size: 1.8rem;
-      }
-    }
-
-    @media (max-width: 992px) {
-      .module-grid-container {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-      }
-      .module-card h3 {
-        font-size: 1.3rem;
-      }
-      .module-description {
-        font-size: 0.9rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .module-grid-container {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        padding: 0 0.8rem;
-      }
-      /* Responsivitas Header */
-      .app-header {
-        padding: 0.8rem;
-        margin-bottom: 2rem; /* Diperbesar dari 1.5rem menjadi 2rem */
-      }
-      h1.section-title {
-        font-size: 1.5rem;
-      }
-      .app-header .back-button {
-        font-size: 1.3rem;
-        padding: 0.4rem;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .module-grid-container {
-        grid-template-columns: 1fr;
-        gap: 1.2rem;
-        padding: 0 0.5rem;
-      }
-      .module-card {
-        padding: 1.2rem;
-      }
-      /* Responsivitas Header */
-      .app-header {
-        padding: 0.6rem 0.5rem;
-        margin-bottom: 1.5rem; /* Diperbesar dari 1rem menjadi 1.5rem */
-      }
-      h1.section-title {
-        font-size: 1.2rem;
-      }
-      .app-header .back-button {
-        font-size: 1.1rem;
-        padding: 0.3rem;
-      }
+      margin-top: 3rem;
     }
   </style>
 </head>
 <body>
 
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="🔍 Cari module berdasarkan nama...">
+  </div>
 
-  <br>
-  <br>
   <div class="module-grid-container">
     <section class="module-card">
       <h3>Vorvex Modules</h3>
       <p class="update-date">Version Universal by @traatweak</p>
-      <div class="module-description">
-        Modul ini berfungsi untuk mengoptimalkan penggunaan GPU 
-dan CPU guna meningkatkan kestabilan performa, serta 
-menjaga FPS agar tetap konsisten dibandingkan versi 
-sebelumnya
-      </div>
+      <div class="module-description">Modul ini berfungsi untuk mengoptimalkan penggunaan GPU dan CPU guna meningkatkan kestabilan performa, serta menjaga FPS agar tetap konsisten dibandingkan versi sebelumnya</div>
       <a class="download-btn" href="https://sfl.gl/t92ui" download>Unduh Module</a>
     </section>
-<br>
+
     <section class="module-card">
       <h3>GAMING (for device VIVO)</h3>
       <p class="update-date">Version BETA By @KxzeTweak</p>
-      <div class="module-description">
-        improving PERFORMANCE and FPS
-      </div>
+      <div class="module-description">improving PERFORMANCE and FPS</div>
       <a class="download-btn" href="https://sfl.gl/FVKT6JO8" download>Unduh Module</a>
     </section>
-<br>
+
     <section class="module-card">
       <h3>MODE PERFORMANCE</h3>
       <p class="update-date">Version 1.0 By @KxzeTweak</p>
-      <div class="module-description">
-        FPS STABIL
-Focus on maximum CPU/GPU
-
-note: use a phone cooler
-      </div>
+      <div class="module-description">FPS STABIL. Focus on maximum CPU/GPU. note: use a phone cooler</div>
       <a class="download-btn" href="https://sfl.gl/XorK" download>Unduh Module</a>
     </section>
-<br>
+
     <section class="module-card">
       <h3>Evolution Module Gaming(EMG)V10☕</h3>
       <p class="update-date">Version By @COOL☕</p>
-      <div class="module-description">
-        Changelog- Remember, with each update, there are more features, so if you want to find out about the features, just open the file.
-Changelog- Ingat setiap update fitur nya makin banyak jadi kalo mau cari tau fitur nya tinggal buka file nya
-feature
-tingkatkan pengalaman gameplay anda
-tingkatkan efesiensi gralloc
-tingkatkan efesiensi swap interval egl dan gr
-tingkatkan responsitivitas gameplay anda
-tingkatkan rendering
-touch no delay
-fps serasa 1 kuintal fps
-optimalkan buffcount
-optimalkan preservebuf
-optimalkan scissor
-optimalkan strategi hwc
-menstabilkan frame rate dengan baik
-mempercepat loading game
-mengoptimalkan thermal service
-memperbaiki value setprop agar sesuai dengan hardware anda
-mengoptimalkan default cpu driver
-      </div>
+      <div class="module-description">tingkatkan gameplay, rendering, touch, FPS, dan banyak lagi fitur lainnya.</div>
       <a class="download-btn" href="https://sfl.gl/xIVSAi" download>Unduh Module</a>
     </section>
-<br>
+
     <section class="module-card">
       <h3>Android Temperature Optimizer(ATO)V1❄️</h3>
       <p class="update-date">Version By @COOL☕</p>
-      <div class="module-description">
-        mendinginkan device sebrutal mungkin
-      </div>
+      <div class="module-description">mendinginkan device sebrutal mungkin</div>
       <a class="download-btn" href="https://sfl.gl/vmhiokE7" download>Unduh Module</a>
     </section>
-<br>
-  </div>
 
     <section class="module-card">
       <h3>FRAME MASTER</h3>
       <p class="update-date">Version By @Cakra</p>
-      <div class="module-description">
-        Meningkatkan responsivitas UI, smoothness animasi, dan 
-efisiensi frame timing dengan menyesuaikan berbagai properti 
-debug.sf. yang mengontrol fase rendering antara aplikasi dan 
-sistem
-      </div>
+      <div class="module-description">Meningkatkan responsivitas UI, smoothness animasi, dan efisiensi frame timing</div>
       <a class="download-btn" href="https://sfl.gl/vuT1RB" download>Unduh Module</a>
     </section>
-<br>
+  </div>
 
   <div class="footer">
     &copy; 2025 @traatweak - Terakhir diperbarui 02 Juni 2025
   </div>
+
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const cards = document.querySelectorAll(".module-card");
+
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.toLowerCase();
+      cards.forEach(card => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        card.style.display = title.includes(query) ? "flex" : "none";
+      });
+    });
+  </script>
 
 </body>
 </html>
